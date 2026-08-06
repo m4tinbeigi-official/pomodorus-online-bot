@@ -1,0 +1,17 @@
+name = "pomodorus-online-bot"
+main = "src/index.js"
+compatibility_date = "2026-08-01"
+compatibility_flags = ["nodejs_compat"]
+
+[browser]
+binding = "BROWSER"
+
+# Secrets (set with `wrangler secret put <NAME>`), not stored here:
+#   BOT_TOKEN            - Telegram bot token from @BotFather
+#   CHANNEL_ID            - destination channel's @username or numeric chat id
+#   TELEGRAM_WEBHOOK_SECRET - random string, must match the one used in setWebhook
+#
+# Plain vars (safe to keep here, no secrets):
+[vars]
+SITE_URL = "https://pomodorus.yazdan.me/"
+CONVEX_URL = "https://tacit-clam-994.convex.cloud"

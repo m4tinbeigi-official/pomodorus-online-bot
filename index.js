@@ -69,14 +69,14 @@ async function screenshotSite() {
   }
 }
 
-bot.command("online", async (ctx) => {
+async function replyWithFeedAndButton(ctx) {
   const feed = await fetchFeed();
   await ctx.reply(formatFeed(feed), {
     reply_markup: {
       inline_keyboard: [[{ text: "📸 اسکرین‌شات بگیر و بفرست به کانال", callback_data: "screenshot" }]],
     },
   });
-});
+}
 
 bot.action("screenshot", async (ctx) => {
   await ctx.answerCbQuery("در حال گرفتن اسکرین‌شات...");
@@ -98,9 +98,9 @@ bot.action("screenshot", async (ctx) => {
   }
 });
 
-bot.start((ctx) =>
-  ctx.reply("سلام! با /online لیست کاربران آنلاین پومودوروس رو ببین.")
-);
+bot.start(async (ctx) => {
+  await replyWithFeedAndButton(ctx);
+});
 
 bot.catch((err, ctx) => {
   console.error(`Unhandled error for update ${ctx.update.update_id}:`, err);
