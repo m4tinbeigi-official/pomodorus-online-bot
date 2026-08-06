@@ -12,5 +12,20 @@
   },
   "devDependencies": {
     "wrangler": "^3.90.0"
+  },
+  "cloudflare": {
+    "label": "Pomodorus Online Bot",
+    "products": ["Workers", "Browser Rendering"],
+    "bindings": {
+      "BOT_TOKEN": {
+        "description": "Telegram bot token from [@BotFather](https://t.me/BotFather)."
+      },
+      "CHANNEL_ID": {
+        "description": "Destination channel's @username or numeric chat id (e.g. -1001234567890). The bot must be an admin of this channel."
+      },
+      "TELEGRAM_WEBHOOK_SECRET": {
+        "description": "Any random string you make up. After deploying, use it as the secret_token when calling Telegram's setWebhook — see this project's README."
+      }
+    }
   }
 }

@@ -62,6 +62,12 @@ Lives in [`cloudflare/`](cloudflare). Uses a Telegram **webhook** instead of pol
 
 Free plan limits to know: Workers Free gives you 100k requests/day, and Browser Rendering gives 10 minutes of browser time/day — plenty for an occasional on-demand screenshot bot. If you ever hit that ceiling you'd need a Workers Paid plan ($5/mo), not required for normal use.
 
+### One-click deploy
+
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/m4tinbeigi-official/pomodorus-online-bot/tree/main/cloudflare)
+
+This clones just the [`cloudflare/`](cloudflare) subfolder into a new repo under your GitHub account and deploys it. Cloudflare will prompt you for `BOT_TOKEN`, `CHANNEL_ID`, and `TELEGRAM_WEBHOOK_SECRET` (see descriptions below) as part of the flow. Once it finishes, you still need to point Telegram's webhook at the deployed URL — see the last step under **Setup** below (`curl .../setWebhook...`); everything before that step is handled for you by the button.
+
 ### Prerequisites
 
 - A Cloudflare account (free)
@@ -152,7 +158,13 @@ MIT — see [LICENSE](LICENSE).
 
 سقف پلن رایگان: Workers Free روزی ۱۰۰ هزار درخواست می‌دهد، و Browser Rendering روزی ۱۰ دقیقه زمان مرورگر — برای یک ربات اسکرین‌شات‌گیرِ گاه‌به‌گاه کاملاً کافی است. اگر روزی به این سقف رسیدی، پلن Paid کلادفلر (۵ دلار در ماه) لازم می‌شود؛ برای استفاده‌ی معمولی نیازی نیست.
 
-راه‌اندازی:
+#### دیپلوی با یک کلیک
+
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/m4tinbeigi-official/pomodorus-online-bot/tree/main/cloudflare)
+
+با این دکمه، فقط پوشه‌ی [`cloudflare/`](cloudflare) به یک ریپوی جدید در گیت‌هاب خودت کپی و مستقیماً دیپلوی می‌شود. کلادفلر خودش مقادیر `BOT_TOKEN`، `CHANNEL_ID` و `TELEGRAM_WEBHOOK_SECRET` را از تو می‌پرسد. بعد از تمام‌شدن، فقط یک قدم باقی می‌ماند: وصل‌کردن webhook تلگرام به آدرس دیپلوی‌شده — همان دستور `curl .../setWebhook...` که در پایین آمده؛ بقیه‌ی مراحل قبل از آن را دکمه برایت انجام می‌دهد.
+
+#### راه‌اندازی دستی (یا اگر ترجیح می‌دهی از CLI استفاده کنی)
 
 ```bash
 cd cloudflare
